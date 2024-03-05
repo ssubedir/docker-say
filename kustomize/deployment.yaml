@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: docker-say
   labels:
+    name: docker-say
     backstage.io/kubernetes-id: docker-say
 spec:
   replicas: 1
@@ -13,6 +14,7 @@ spec:
     metadata:
       labels:
         app: docker-say
+        backstage.io/kubernetes-id: docker-say
     spec:
       containers:
       - name: docker-say
