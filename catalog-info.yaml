@@ -4,7 +4,6 @@ metadata:
   name: docker-say
   description: docker say hello world!
   annotations:
-    backstage.io/kubernetes-id: docker-say
     backstage.io/kubernetes-label-selector: docker-say
     backstage.io/techdocs-ref: dir:.
   tags:
