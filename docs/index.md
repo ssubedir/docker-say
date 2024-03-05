@@ -1,62 +1,51 @@
-## Introduction to Docker
+# hello-world-rest-json
+This project is a small REST hello-world API to build a docker image we can test behind an API Gateway.
 
-### What is Docker?
+The only things it does is to respond
+```json
+{ "message":"Hello World" }
+```
+When you call ```http://localhost:8080```.
 
-Docker is a platform for developing, shipping, and running applications. It provides a way to package and distribute applications and their dependencies in a standardized format called containers.
+## docker image
+The docker image it-self is available on the docker-hub : https://hub.docker.com/r/thomaspoignant/hello-world-rest-json/
 
-### Key Concepts
+You can run it using :
+```shell
+> docker run -d -p 8080:8080 thomaspoignant/hello-world-rest-json
+```
+## API response
+The only things it does is to respond
+```json
+{ "message":"Hello World" }
+```
+When you call ```http://localhost:8080```.
 
-- **Containers**: Lightweight, portable, and self-sufficient units that encapsulate application code and all its dependencies.
-- **Images**: Read-only templates used to create containers.
-- **Dockerfile**: Text document containing instructions for building a Docker image.
-- **Docker Engine**: Core component responsible for building, running, and managing containers.
-
-### Benefits of Docker
-
-- **Portability**: Run applications on any platform supporting Docker.
-- **Isolation**: Prevent conflicts and ensure consistency in deployment.
-- **Efficiency**: Optimize resource usage and improve performance.
-- **Scalability**: Lightweight and scalable containers for easy scaling based on demand.
-
----
-
-## Getting Started with Docker
-
-### Installation
-
-Install Docker Engine on your system from the official Docker website.
-
-### Docker Commands
-
-- `docker pull <image>`: Pulls a Docker image from a registry.
-- `docker build <path/to/Dockerfile>`: Builds a Docker image from a Dockerfile.
-- `docker run <image>`: Runs a Docker container from an image.
-- `docker ps`: Lists running containers.
-- `docker images`: Lists Docker images.
-- `docker stop <container>`: Stops a running container.
-- `docker rm <container>`: Removes a container.
-- `docker rmi <image>`: Removes an image.
-
-### Dockerfile Example
-
-```Dockerfile
-# Use an official Python runtime as the base image
-FROM python:3.9-slim
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-# Install any needed dependencies specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Make port 80 available to the world outside this container
-EXPOSE 80
-
-# Define environment variable
-ENV NAME World
-
-# Run app.py when the container launches
-CMD ["python", "app.py"]
+### CORS
+We also add CORS wildcard to be sure you can put it behind your gateway.
+```shell
+> curl -H "Origin: http://example.org" --verbose http://localhost:8080/
+```
+output: 
+```shell
+*   Trying ::1...
+* TCP_NODELAY set
+* Connected to localhost (::1) port 8080 (#0)
+> GET / HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.54.0
+> Accept: */*
+> Origin: http://example.org
+>
+< HTTP/1.1 200
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< Access-Control-Allow-Origin: *
+< Content-Type: application/json;charset=UTF-8
+< Transfer-Encoding: chunked
+< Date: Thu, 06 Sep 2018 21:33:43 GMT
+<
+* Connection #0 to host localhost left intact
+{"message":"HelloWorld"}%
+```
