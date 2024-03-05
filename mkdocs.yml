@@ -1,0 +1,6 @@
+site_name: Docker Say Docs
+site_description: Hello World! (an example of minimal Dockerization)
+plugins:
+  - techdocs-core
+nav:
+  - Getting Started: index.md
