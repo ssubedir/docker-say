@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name:docker-say
+  name: docker-say
   description: docker say hello world!
   annotations:
     backstage.io/kubernetes-id: docker-say
