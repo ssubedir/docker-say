@@ -8,7 +8,6 @@ metadata:
     backstage.io/techdocs-ref: dir:.
   tags:
     - docker
-    - helloWorld
     - rest
     - java
   links:
