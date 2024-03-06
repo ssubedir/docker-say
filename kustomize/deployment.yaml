@@ -1,11 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: users-api-nginx
+  name: docker-say-nginx
   labels:
-    app.kubernetes.io/name: nginx
-    app.kubernetes.io/instance: users-api
-    backstage.io/kubernetes-id: users-api
+    app.kubernetes.io/instance: docker-say
+    backstage.io/kubernetes-id: docker-say
 spec:
   replicas: 1
   strategy:
@@ -13,14 +12,12 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app.kubernetes.io/name: nginx
-      app.kubernetes.io/instance: users-api
+      app.kubernetes.io/instance: docker-say
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: nginx
-        app.kubernetes.io/instance: users-api
-        backstage.io/kubernetes-id: users-api
+        app.kubernetes.io/instance: docker-say
+        backstage.io/kubernetes-id: docker-say
     spec:
       automountServiceAccountToken: false
       shareProcessNamespace: false
@@ -32,8 +29,7 @@ spec:
             - podAffinityTerm:
                 labelSelector:
                   matchLabels:
-                    app.kubernetes.io/name: nginx
-                    app.kubernetes.io/instance: users-api
+                    app.kubernetes.io/instance: docker-say
                 topologyKey: kubernetes.io/hostname
               weight: 1
         nodeAffinity:

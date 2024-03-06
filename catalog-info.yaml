@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: users-api
-  description: Users api
+  name: docker-say
+  description: docker-say
   annotations:
-    backstage.io/kubernetes-id: users-api
+    backstage.io/kubernetes-id: docker-say
     # backstage.io/kubernetes-label-selector: users-api
   tags:
     - nginx
