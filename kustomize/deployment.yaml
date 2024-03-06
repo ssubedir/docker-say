@@ -4,6 +4,9 @@ metadata:
   name: docker-say
   labels:
     backstage.io/kubernetes-id: docker-say
+  annotations:
+      backstage.io/kubernetes-label-selector: docker-say
+      backstage.io/kubernetes-id: docker-say
 spec:
   replicas: 1
   selector:
