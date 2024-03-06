@@ -5,7 +5,7 @@ metadata:
   description: docker-say
   annotations:
     backstage.io/kubernetes-id: docker-say
-    backstage.io/kubernetes-label-selector: docker-say
+    # backstage.io/kubernetes-label-selector: docker-say
   tags:
     - nginx
     - python
