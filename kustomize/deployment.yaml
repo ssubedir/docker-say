@@ -14,7 +14,6 @@ spec:
     metadata:
       labels:
         app: docker-say
-        backstage.io/kubernetes-id: docker-say
     spec:
       containers:
       - name: docker-say
