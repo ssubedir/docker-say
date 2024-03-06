@@ -1,51 +1,26 @@
-# hello-world-rest-json
-This project is a small REST hello-world API to build a docker image we can test behind an API Gateway.
+# Backstage!
 
-The only things it does is to respond
-```json
-{ "message":"Hello World" }
-```
-When you call ```http://localhost:8080```.
+Backstage.io is an open-source platform designed to empower organizations to build comprehensive and customizable developer portals. These portals act as central hubs, streamlining development workflows by providing unified access to various tools, services, and documentation relevant to software development teams.
 
-## docker image
-The docker image it-self is available on the docker-hub : https://hub.docker.com/r/thomaspoignant/hello-world-rest-json/
+## Key Features
 
-You can run it using :
-```shell
-> docker run -d -p 8080:8080 thomaspoignant/hello-world-rest-json
-```
-## API response
-The only things it does is to respond
-```json
-{ "message":"Hello World" }
-```
-When you call ```http://localhost:8080```.
+Software Catalog: 
+Centralized inventory of all software entities, including microservices, APIs, libraries, websites, and more.
+Technical Documentation: A platform for creating, maintaining, and discovering technical documentation, often adopting a "docs-as-code" approach.
+Plugins and Integrations: Extensible framework allowing integration with various tools and services used within an organization's development ecosystem.
+Unified Dashboard: Provides a single interface for developers to access and manage relevant resources, simplifying discovery and access.
+Community and Ecosystem: Backstage benefits from a thriving community contributing plugins, best practices, and support, fostering a vibrant ecosystem.
+Benefits of Using Backstage
 
-### CORS
-We also add CORS wildcard to be sure you can put it behind your gateway.
-```shell
-> curl -H "Origin: http://example.org" --verbose http://localhost:8080/
-```
-output: 
-```shell
-*   Trying ::1...
-* TCP_NODELAY set
-* Connected to localhost (::1) port 8080 (#0)
-> GET / HTTP/1.1
-> Host: localhost:8080
-> User-Agent: curl/7.54.0
-> Accept: */*
-> Origin: http://example.org
->
-< HTTP/1.1 200
-< Vary: Origin
-< Vary: Access-Control-Request-Method
-< Vary: Access-Control-Request-Headers
-< Access-Control-Allow-Origin: *
-< Content-Type: application/json;charset=UTF-8
-< Transfer-Encoding: chunked
-< Date: Thu, 06 Sep 2018 21:33:43 GMT
-<
-* Connection #0 to host localhost left intact
-{"message":"HelloWorld"}%
-```
+Improved Developer Productivity: Provides easy access to information and tools, reducing time spent searching for resources.
+Enhanced Collaboration: Facilitates knowledge sharing and collaboration across teams through centralized documentation and unified access.
+Reduced Complexity: Simplifies managing and maintaining a growing software landscape by offering a structured approach.
+Increased Efficiency: Optimizes development workflows by streamlining processes and eliminating information silos.
+Customization: Backstage is highly customizable, allowing organizations to tailor the platform to their specific needs and preferences.
+
+## Learning Resources
+Official Website: https://backstage.io/
+GitHub Repository: https://github.com/backstage/backstage
+Documentation: https://backstage.io/docs/reference/plugin-catalog/
+Blog: https://backstage.io/blog/
+Community Forum: https://www.backstage.com/forums/

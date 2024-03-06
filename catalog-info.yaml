@@ -1,29 +1,30 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: docker-say
-  description: docker say hello world!
+  name: users-api
+  description: Users api
   annotations:
-    backstage.io/kubernetes-label-selector: docker-say
-    backstage.io/kubernetes-id: docker-say
+    backstage.io/kubernetes-id: users-api
+    backstage.io/kubernetes-label-selector: users-api
   tags:
-    - docker
-    - rest
-    - java
+    - nginx
+    - python
+    - flask
   links:
-    - url: https://github.com/ssubedir/docker-say
+    - url: https://admin.example-org.com
       title: Admin Dashboard
       icon: dashboard
       type: admin-dashboard
-    - url: https://github.com/ssubedir/docker-say
+    - url: https://metrics.example-org.com
       title: metrics
       icon: analytics
       type: metrics-dashboard
-    - url: https://github.com/ssubedir/docker-say
+    - url: https://logs.example-org.com
       title: logs
       icon: assignment
       type: logs-dashboard  
 spec:
   type: service
-  lifecycle: experimental
-  owner: Foci
+  lifecycle: production
+  owner: users-team
+  system: public-websites
