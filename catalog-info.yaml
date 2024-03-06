@@ -5,7 +5,7 @@ metadata:
   description: Users api
   annotations:
     backstage.io/kubernetes-id: users-api
-    backstage.io/kubernetes-label-selector: users-api
+    # backstage.io/kubernetes-label-selector: users-api
   tags:
     - nginx
     - python
